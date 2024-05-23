@@ -1,0 +1,101 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <style>
+        .strength-meter {
+            display: inline-block;
+            width: 150px;
+            height: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        .strength-bar {
+            height: 100%;
+        }
+
+        .very-weak {
+            background-color: #ff4d4d;
+        }
+
+        .weak {
+            background-color: #ffaa80;
+        }
+
+        .medium {
+            background-color: #ffdb4d;
+        }
+
+        .strong {
+            background-color: #aaff80;
+        }
+
+        .very-strong {
+            background-color: #4dff4d;
+        }
+    </style>
+</head>
+<body>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" oninput="checkPasswordStrength(this.value)">
+    <div id="strengthMeter" class="strength-meter">
+        <div id="strengthBar" class="strength-bar"></div>
+    </div>
+    <p id="strengthText">Strength: </p>
+
+    <script>
+        function checkPasswordStrength(password) {
+            var strengthMeter = document.getElementById('strengthMeter');
+            var strengthBar = document.getElementById('strengthBar');
+            var strengthText = document.getElementById('strengthText');
+
+            var strength = 0;
+            if (password.match(/[a-zA-Z0-9]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[~!@#$%^&*()_+[\]{}|;:'",.<>?]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[a-z]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[A-Z]+/)) {
+                strength += 1;
+            }
+            if (password.match(/[0-9]+/)) {
+                strength += 1;
+            }
+            if (password.length >= 8) {
+                strength += 1;
+            }
+
+            switch (strength) {
+                case 0:
+                case 1:
+                    strengthMeter.className = 'strength-meter very-weak';
+                    strengthText.textContent = 'Strength: Very Weak';
+                    break;
+                case 2:
+                    strengthMeter.className = 'strength-meter weak';
+                    strengthText.textContent = 'Strength: Weak';
+                    break;
+                case 3:
+                    strengthMeter.className = 'strength-meter medium';
+                    strengthText.textContent = 'Strength: Medium';
+                    break;
+                case 4:
+                    strengthMeter.className = 'strength-meter strong';
+                    strengthText.textContent = 'Strength: Strong';
+                    break;
+                case 5:
+                    strengthMeter.className = 'strength-meter very-strong';
+                    strengthText.textContent = 'Strength: Very Strong';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
