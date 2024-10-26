@@ -19,9 +19,6 @@ The Password Strength Checker is a web application that evaluates the strength o
 ## Installation
 No installation is required. Just clone the repository and open the HTML file in your preferred web browser.
 
-```bash
-git clone https://github.com/SaiSravyasri/password-strength-check.git
-cd password-strength-check
 ## Contributing
 Contributions are welcome! Feel free to submit issues or pull requests for any improvements or new features.
 
@@ -30,3 +27,8 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 For any inquiries, please contact me at saisravyasri@gmail.com.
+
+```bash
+git clone https://github.com/SaiSravyasri/password-strength-check.git
+cd password-strength-check
+
