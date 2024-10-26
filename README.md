@@ -22,3 +22,11 @@ No installation is required. Just clone the repository and open the HTML file in
 ```bash
 git clone https://github.com/SaiSravyasri/password-strength-check.git
 cd password-strength-check
+## Contributing
+Contributions are welcome! Feel free to submit issues or pull requests for any improvements or new features.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contact
+For any inquiries, please contact me at saisravyasri@gmail.com.
